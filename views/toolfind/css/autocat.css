@@ -1,0 +1,144 @@
+/**
+ * 09.01.2013
+ * CSS для стилизации ТехДока
+ * Stanislav WEB
+ */
+
+ .soapFault {
+     padding: 10px;
+     background: #444444;
+     color: #fff;
+     border: 1px solid #222;
+ }
+.tooltip{
+    position:absolute;
+    z-index:999;
+    left:-9999px;
+    background-color:#999;
+    padding:5px;
+    border:1px solid #fff;
+    width:250px;
+}
+.tooltip p{
+    margin:0;
+    padding:0;
+    color:#fff;
+    background-color:#222;
+    padding:2px 7px;
+}
+.tooltip span {
+    display: none;
+}
+.tooltip:hover span {
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    line-height: normal;
+    color: #949494;
+    text-decoration: none;
+    padding: 3px 5px;
+    width: 122px;
+    bottom: -1px;
+    border: 1px solid #949494;
+    overflow: visible;
+}
+
+.bread{
+    background: #ededed;
+    padding: 3px 0 3px 10px;
+}
+.bread, .bread a{
+    color: #7e6f54;
+}
+.alphabet-frame {
+    text-align: center;
+    margin: 8px 0;
+}
+.alphabet{
+    display: inline-block;
+    text-align: center;
+    zoom: 1;	
+}
+.alphabet li{
+    display: inline-block;
+    padding-right: 15px;
+    zoom: 1;
+    *display: inline;   
+}
+.alphabet li a{
+    color: #444444;
+    font-weight: 700;
+}
+.cols5{
+    -moz-column-count: 5;
+    -webkit-column-count: 5;
+    column-count: 5;
+    border: 1px solid #CCCCCC;
+    padding: 10px;    
+}
+.tecdoc__model{
+    padding: 0 0 0 10px;
+}
+.tecdoc__marka li a, .tecdoc__model li a{
+    color: #888888;
+}
+
+/**
+ * Древовидное меню
+ */
+ 
+#tree li {
+    list-style: none outside none;
+    margin: 10px 0;
+}
+#tree ul ul {
+    display: none;
+    margin: 10px 0 10px 18px;
+}
+#tree span.pm {
+    background: url("../images/btn_pm.gif") no-repeat scroll 0 3px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    padding-left: 18px;
+}
+#tree span.pm.opened {
+    background-position: 0 -13px;
+}
+#tree span.pm + a {
+    font-weight: bold;
+}
+table tr td.pic img {
+    margin-top: 6px;
+    width: 120px;
+}
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+/**
+ * Карточка товара
+ */
+ 
+.max-w-650 {
+    max-width: 650px;
+}
+ .img-item-list__link {
+    border: 1px solid;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+.formBut {
+    float: left;
+    margin: 0 10px 0 0;
+}

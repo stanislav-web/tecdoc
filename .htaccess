@@ -1,0 +1,53 @@
+#######################################################################
+### .htaccess - Настройки каталога                                  ###
+### Stanislav WEB                                                   ###
+### stanislav@uplab.ru                                              ###
+#######################################################################
+
+### Отладочная информация
+### Убрать сразу после выгрузки продакшн версии!
+php_flag display_errors "On"
+php_flag error_reporting "E_ALL"
+php_flag allow_call_time_pass_reference 1
+php_flag session.use_trans_sid off
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On 
+  RewriteBase /autocatalog
+
+  ###
+  # Делаю обработку URL адресов
+  ###
+
+
+  RewriteCond %{REQUEST_URI} ^/(.*)/(.*)/(.*)/(.*)/(.*)/$
+  RewriteRule ^(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?view=card_product&manufacturer_id=$1&model_id=$2&parts_id=$3&kit_id=$4&prod_id=$5 [L,QSA] # Карточка товара
+ 
+  RewriteCond %{REQUEST_URI} ^/(.*)/(.*)/(.*)/(.*)/$
+  RewriteRule ^(.*)/(.*)/(.*)/(.*)/$ index.php?view=list_toolkits&manufacturer_id=$1&model_id=$2&parts_id=$3&kit_id=$4 [L,QSA] # Комплекты деталей (после древовидного меню)
+ 
+  RewriteCond %{REQUEST_URI} ^/(.*)/(.*)/(.*)/$
+  RewriteRule ^(.*)/(.*)/(.*)/$ index.php?view=list_engine_parts&manufacturer_id=$1&model_id=$2&parts_id=$3 [L,QSA] # Листинг комплектующих по моделям (древовидное меню)
+
+  RewriteCond %{REQUEST_URI} ^/(.*)/(.*)/$
+  RewriteRule ^(.*)/(.*)/$ index.php?view=list_models_engine&manufacturer_id=$1&model_id=$2 [L,QSA] # Типы моделей по производителям 
+
+  RewriteCond %{REQUEST_URI} ^/(.*)/$
+  RewriteRule ^(.*)/$ index.php?view=list_models&manufacturer_id=$1 [L] # Модели по производителям
+
+</IfModule>
+
+<IfModule mod_expires.c>
+  ### Включаю кэширование медиа файлов
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"  
+</IfModule>

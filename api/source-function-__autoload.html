@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File configuration.php | TecDoc</title>
+
+	<script type="text/javascript" src="resources/combined.js?143429729"></script>
+	<script type="text/javascript" src="elementlist.js?3008431154"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active"><a href="package-TecDoc.html">TecDoc</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Cache.html">Cache</a></li>
+				<li><a href="class-Debug.html">Debug</a></li>
+				<li><a href="class-Language.html">Language</a></li>
+				<li><a href="class-Router.html">Router</a></li>
+				<li><a href="class-TecDoc.html">TecDoc</a></li>
+				<li><a href="class-Template.html">Template</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li class="active"><a href="function-__autoload.html">__autoload</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-TecDoc.html" title="Summary of TecDoc"><span>Package</span></a>
+			</li>
+			<li>
+				<a href="function-__autoload.html" title="Summary of __autoload"><span>Function</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a><span class="php-comment">/*
+</span></span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-comment"> * 20.12.2012
+</span></span><span id="4" class="l"><a class="l" href="#4"> 4: </a><span class="php-comment"> * Конфигурация приложения
+</span></span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment"> * Stanislav WEB
+</span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment"> */</span>
+</span><span id="7" class="l"><a class="l" href="#7"> 7: </a>
+</span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-keyword2">define</span>(<span class="php-quote">'TecDoc'</span>, <span class="php-keyword1">true</span>); <span class="php-comment">// ставлю защиту от прямого доступа</span>
+</span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-keyword2">define</span>(<span class="php-quote">'DS'</span>, DIRECTORY_SEPARATOR); <span class="php-comment">// разделитель директорий по умолчанию</span>
+</span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-comment">/*
+</span></span><span id="11" class="l"><a class="l" href="#11">11: </a><span class="php-comment"> * Системные настройки
+</span></span><span id="12" class="l"><a class="l" href="#12">12: </a><span class="php-comment"> */</span>
+</span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'TITLE'</span>] = <span class="php-quote">'Каталог Автозапчастей'</span>; <span class="php-comment">// название по умолчанию</span>
+</span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'SYSTEM_LANG'</span>] = <span class="php-quote">'ru'</span>; <span class="php-comment">// язык по умолчанию</span>
+</span><span id="15" class="l"><a class="l" href="#15">15: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'SYSTEM_ENCODING'</span>] = <span class="php-quote">'UTF-8'</span>; <span class="php-comment">// кодировка по умолчанию</span>
+</span><span id="16" class="l"><a class="l" href="#16">16: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'ENABLE_CACHE'</span>] = <span class="php-keyword1">true</span>; <span class="php-comment">// Включить Кэш SOAP запросов и страниц?</span>
+</span><span id="17" class="l"><a class="l" href="#17">17: </a>
+</span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment">/*
+</span></span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment"> * Устанавливаю пути
+</span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> */</span>
+</span><span id="21" class="l"><a class="l" href="#21">21: </a>
+</span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'DOMAIN'</span>] = <span class="php-var">$_SERVER</span>[<span class="php-quote">'HTTP_HOST'</span>]; <span class="php-comment">// имя домена</span>
+</span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'SITE_PATH'</span>] = DS.<span class="php-quote">'autocatalog'</span>; <span class="php-comment">// путь относительно сайта</span>
+</span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'CORE_PATH'</span>] = <span class="php-var">$_SERVER</span>[<span class="php-quote">'DOCUMENT_ROOT'</span>].<span class="php-var">$_CONFIG</span>[<span class="php-quote">'SITE_PATH'</span>]; <span class="php-comment">// путь к компоненту</span>
+</span><span id="25" class="l"><a class="l" href="#25">25: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'TEMPLATE'</span>] = <span class="php-quote">'toolfind'</span>; <span class="php-comment">// текущий шаблон</span>
+</span><span id="26" class="l"><a class="l" href="#26">26: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'LIBS_PATH'</span>] = <span class="php-var">$_CONFIG</span>[<span class="php-quote">'CORE_PATH'</span>].DS.<span class="php-quote">'system'</span>.DS.<span class="php-quote">'libs'</span>; <span class="php-comment">// путь к библиотекам</span>
+</span><span id="27" class="l"><a class="l" href="#27">27: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'LANG_PATH'</span>] = <span class="php-var">$_CONFIG</span>[<span class="php-quote">'CORE_PATH'</span>].DS.<span class="php-quote">'system'</span>.DS.<span class="php-quote">'languages'</span>.DS.<span class="php-var">$_CONFIG</span>[<span class="php-quote">'SYSTEM_LANG'</span>].<span class="php-quote">'.php'</span>; <span class="php-comment">// языки</span>
+</span><span id="28" class="l"><a class="l" href="#28">28: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'TEMPLATE_PATH'</span>] = <span class="php-var">$_CONFIG</span>[<span class="php-quote">'CORE_PATH'</span>].DS.<span class="php-quote">'views'</span>.DS.<span class="php-var">$_CONFIG</span>[<span class="php-quote">'TEMPLATE'</span>]; <span class="php-comment">// путь к шаблону</span>
+</span><span id="29" class="l"><a class="l" href="#29">29: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'JQUERY_PATH'</span>] = <span class="php-quote">'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2'</span>; <span class="php-comment">// JQuery библиотека</span>
+</span><span id="30" class="l"><a class="l" href="#30">30: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'CSS_PATH'</span>] = <span class="php-var">$_CONFIG</span>[<span class="php-quote">'SITE_PATH'</span>].DS.<span class="php-quote">'views'</span>.DS.<span class="php-var">$_CONFIG</span>[<span class="php-quote">'TEMPLATE'</span>].DS.<span class="php-quote">'css'</span>; <span class="php-comment">// CSS</span>
+</span><span id="31" class="l"><a class="l" href="#31">31: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'JS_PATH'</span>] = <span class="php-var">$_CONFIG</span>[<span class="php-quote">'SITE_PATH'</span>].DS.<span class="php-quote">'views'</span>.DS.<span class="php-var">$_CONFIG</span>[<span class="php-quote">'TEMPLATE'</span>].DS.<span class="php-quote">'js'</span>; <span class="php-comment">// JavaScript Init</span>
+</span><span id="32" class="l"><a class="l" href="#32">32: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'CACHE_PATH'</span>] = DS.<span class="php-quote">'cachewsdl'</span>; <span class="php-comment">// директория для кэшируемых запросов SOAP</span>
+</span><span id="33" class="l"><a class="l" href="#33">33: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'SEARCH_STRING'</span>] = DS.<span class="php-quote">'toolfindsearch'</span>.DS.<span class="php-quote">'index.php?type=prices'</span>; <span class="php-comment">// строка к выдаче результатов поиска по сайту</span>
+</span><span id="34" class="l"><a class="l" href="#34">34: </a>
+</span><span id="35" class="l"><a class="l" href="#35">35: </a><span class="php-comment">/**
+</span></span><span id="36" class="l"><a class="l" href="#36">36: </a><span class="php-comment"> * Настройки подключения к SOAP Серверу
+</span></span><span id="37" class="l"><a class="l" href="#37">37: </a><span class="php-comment"> */</span>
+</span><span id="38" class="l"><a class="l" href="#38">38: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'SERVER'</span>] = <span class="php-quote">'http://webservicepilot.tecdoc.net/pegasus-2-0/wsdl/TecdocToCat'</span>; <span class="php-comment">// сервер SOAP для подключения</span>
+</span><span id="39" class="l"><a class="l" href="#39">39: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'MEDIA_SERVER'</span>] = <span class="php-quote">'http://webservicepilot.tecdoc.net/pegasus-2-0/documents/20048'</span>; <span class="php-comment">// сервер SOAP для</span>
+</span><span id="40" class="l"><a class="l" href="#40">40: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'PROVIDER_ID'</span>] = <span class="php-num">283</span>; <span class="php-comment">// ID провайдера от tecdoc.de</span>
+</span><span id="41" class="l"><a class="l" href="#41">41: </a><span class="php-var">$_CONFIG</span>[<span class="php-quote">'PROVIDER_LANG'</span>] = <span class="php-quote">'ru'</span>; <span class="php-comment">// Язык соединения</span>
+</span><span id="42" class="l"><a class="l" href="#42">42: </a><span class="php-comment">////////////////////////////////////////////////////////////////////////////////////////////////////////</span>
+</span><span id="43" class="l"><a class="l" href="#43">43: </a>
+</span><span id="44" class="l"><a class="l" href="#44">44: </a><span class="php-comment">/**
+</span></span><span id="45" class="l"><a class="l" href="#45">45: </a><span class="php-comment"> * Подключаю языковые настройки
+</span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-comment"> */</span>
+</span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-keyword1">if</span>(<span class="php-keyword2">file_exists</span>(<span class="php-var">$_CONFIG</span>[<span class="php-quote">'LANG_PATH'</span>])) <span class="php-keyword1">require_once</span>(<span class="php-var">$_CONFIG</span>[<span class="php-quote">'LANG_PATH'</span>]);
+</span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-keyword1">else</span> <span class="php-keyword1">die</span>(<span class="php-quote">'Не найден файл '</span>.<span class="php-var">$_CONFIG</span>[<span class="php-quote">'LANG_PATH'</span>]);
+</span><span id="49" class="l"><a class="l" href="#49">49: </a>
+</span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-comment">/**
+</span></span><span id="51" class="l"><a class="l" href="#51">51: </a><span class="php-comment"> * Массив, хранящий имя класса и путь до файла
+</span></span><span id="52" class="l"><a class="l" href="#52">52: </a><span class="php-comment"> */</span>
+</span><span id="53" class="l"><a class="l" href="#53">53: </a>
+</span><span id="54" class="l"><a class="l" href="#54">54: </a><span class="php-var">$__autoload</span> = <span class="php-keyword1">array</span>(
+</span><span id="55" class="l"><a class="l" href="#55">55: </a>    <span class="php-quote">'Debug'</span> =&gt; <span class="php-var">$_CONFIG</span>[<span class="php-quote">'LIBS_PATH'</span>].DS.<span class="php-quote">'class.Debug.php'</span>,
+</span><span id="56" class="l"><a class="l" href="#56">56: </a>    <span class="php-quote">'Router'</span> =&gt; <span class="php-var">$_CONFIG</span>[<span class="php-quote">'LIBS_PATH'</span>].DS.<span class="php-quote">'class.Router.php'</span>,
+</span><span id="57" class="l"><a class="l" href="#57">57: </a>    <span class="php-quote">'Language'</span> =&gt; <span class="php-var">$_CONFIG</span>[<span class="php-quote">'LIBS_PATH'</span>].DS.<span class="php-quote">'class.Language.php'</span>,
+</span><span id="58" class="l"><a class="l" href="#58">58: </a>    <span class="php-quote">'TecDoc'</span> =&gt; <span class="php-var">$_CONFIG</span>[<span class="php-quote">'LIBS_PATH'</span>].DS.<span class="php-quote">'class.TecDoc.php'</span>,
+</span><span id="59" class="l"><a class="l" href="#59">59: </a>    <span class="php-quote">'Cache'</span> =&gt; <span class="php-var">$_CONFIG</span>[<span class="php-quote">'LIBS_PATH'</span>].DS.<span class="php-quote">'class.Cache.php'</span>,    
+</span><span id="60" class="l"><a class="l" href="#60">60: </a>    <span class="php-quote">'Template'</span> =&gt; <span class="php-var">$_CONFIG</span>[<span class="php-quote">'LIBS_PATH'</span>].DS.<span class="php-quote">'class.Template.php'</span>,
+</span><span id="61" class="l"><a class="l" href="#61">61: </a>);
+</span><span id="62" class="l"><a class="l" href="#62">62: </a>
+</span><span id="63" class="l"><a class="l" href="#63">63: </a><span class="php-comment">/**
+</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-comment"> * 
+</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-comment"> * @package TecDoc
+</span></span><span id="66" class="l"><a class="l" href="#66">66: </a><span class="php-comment"> * __autoload($class) - Метод перенаправления на указанный URL
+</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-comment"> * @param string $class название класса
+</span></span><span id="68" class="l"><a class="l" href="#68">68: </a><span class="php-comment"> * @access public
+</span></span><span id="69" class="l"><a class="l" href="#69">69: </a><span class="php-comment"> * @return class подключенный класс
+</span></span><span id="70" class="l"><a class="l" href="#70">70: </a><span class="php-comment"> */</span>  
+</span><span id="71" class="l"><a class="l" href="#71">71: </a><span class="php-keyword1">function</span> <a id="___autoload" href="#___autoload">__autoload</a>(<span class="php-var">$class</span>)
+</span><span id="72" class="l"><a class="l" href="#72">72: </a>{
+</span><span id="73" class="l"><a class="l" href="#73">73: </a>    <span class="php-keyword1">global</span> <span class="php-var">$__autoload</span>;
+</span><span id="74" class="l"><a class="l" href="#74">74: </a>    <span class="php-keyword1">if</span>(<span class="php-keyword1">isset</span>(<span class="php-var">$__autoload</span>[<span class="php-var">$class</span>])) 
+</span><span id="75" class="l"><a class="l" href="#75">75: </a>    {
+</span><span id="76" class="l"><a class="l" href="#76">76: </a>        <span class="php-keyword1">if</span>(<span class="php-keyword2">file_exists</span>(<span class="php-var">$__autoload</span>[<span class="php-var">$class</span>])) <span class="php-keyword1">require_once</span>(<span class="php-var">$__autoload</span>[<span class="php-var">$class</span>]);
+</span><span id="77" class="l"><a class="l" href="#77">77: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">die</span>(<span class="php-quote">'Could not find the class '</span>.<span class="php-var">$__autoload</span>[<span class="php-var">$class</span>]);        
+</span><span id="78" class="l"><a class="l" href="#78">78: </a>    } 
+</span><span id="79" class="l"><a class="l" href="#79">79: </a>}
+</span><span id="80" class="l"><a class="l" href="#80">80: </a>
+</span><span id="81" class="l"><a class="l" href="#81">81: </a><span class="php-comment">/**
+</span></span><span id="82" class="l"><a class="l" href="#82">82: </a><span class="php-comment"> * Красиво выгружаю классы :D
+</span></span><span id="83" class="l"><a class="l" href="#83">83: </a><span class="php-comment"> */</span>
+</span><span id="84" class="l"><a class="l" href="#84">84: </a>__autoload(<span class="php-quote">'Debug'</span>);
+</span><span id="85" class="l"><a class="l" href="#85">85: </a>__autoload(<span class="php-quote">'Router'</span>);
+</span><span id="86" class="l"><a class="l" href="#86">86: </a>__autoload(<span class="php-quote">'Language'</span>);
+</span><span id="87" class="l"><a class="l" href="#87">87: </a>__autoload(<span class="php-quote">'Cache'</span>);
+</span><span id="88" class="l"><a class="l" href="#88">88: </a>__autoload(<span class="php-quote">'TecDoc'</span>);
+</span><span id="89" class="l"><a class="l" href="#89">89: </a></span>__autoload(<span class="php-quote">'Template'</span>);</code></pre>
+
+	<div id="footer">
+		TecDoc API documentation generated by <a href="http://vk.com/stanislav_web">Stanislav WEB</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
