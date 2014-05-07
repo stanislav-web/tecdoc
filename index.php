@@ -15,11 +15,7 @@
 if(!session_start()) session_start(); // стартую сессию по каталогу
 setlocale(LC_CTYPE, "ru_RU.UTF-8"); // устанавливаю локаль UTF-8
 
-/*
- * Устанавливаю header Bitrix со всеми его библиотеками
- */
-if(file_exists($_SERVER["DOCUMENT_ROOT"].'/bitrix/header.php')) require_once($_SERVER[ "DOCUMENT_ROOT"].'/bitrix/header.php');
-else die('Не найден файл '.$_SERVER["DOCUMENT_ROOT"].'/bitrix/header.php');
+
 
 /**
  *  Подключаю файл конфигурации каталога
@@ -27,16 +23,12 @@ else die('Не найден файл '.$_SERVER["DOCUMENT_ROOT"].'/bitrix/header
 if(file_exists('configuration.php')) require_once('configuration.php');
 else die('Can\'t find configuration.php');
 
-$exec = new Template($_CONFIG, $APPLICATION); // инициализирую объект каталога
+$exec = new Template($_CONFIG, $Applet); // инициализирую объект каталога
 
 /**
  * Выполняем приложение
  */
 if($exec instanceof Template) $exec->view();
 
-/*
- * Устанавливаю footer Bitrix
- */
-if(file_exists($_SERVER[ "DOCUMENT_ROOT"]. "/bitrix/footer.php")) require_once($_SERVER[ "DOCUMENT_ROOT"]."/bitrix/footer.php");
-else die('Can\'t find '.$_SERVER[ "DOCUMENT_ROOT"].'/bitrix/footer.php');
+
 ?>
